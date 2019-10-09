@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9EE0F293-7FE5-4B1E-A199-05E7D335D726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fretime-simulator", "src\fretime-simulator\fretime-simulator.csproj", "{2927D530-1A71-43B4-9039-B98845C9030F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9C241509-8416-4CE2-8DE5-49F906F093E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "freetome-simulator.Tests", "test\freetome-simulator.Tests\freetome-simulator.Tests.csproj", "{500DAE95-2343-44A8-9CF1-586077912EC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Debug|x64.Build.0 = Debug|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Debug|x86.Build.0 = Debug|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Release|x64.ActiveCfg = Release|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Release|x64.Build.0 = Release|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Release|x86.ActiveCfg = Release|Any CPU
+		{2927D530-1A71-43B4-9039-B98845C9030F}.Release|x86.Build.0 = Release|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Debug|x64.Build.0 = Debug|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Debug|x86.Build.0 = Debug|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Release|x64.ActiveCfg = Release|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Release|x64.Build.0 = Release|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Release|x86.ActiveCfg = Release|Any CPU
+		{500DAE95-2343-44A8-9CF1-586077912EC9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2927D530-1A71-43B4-9039-B98845C9030F} = {9EE0F293-7FE5-4B1E-A199-05E7D335D726}
+		{500DAE95-2343-44A8-9CF1-586077912EC9} = {9C241509-8416-4CE2-8DE5-49F906F093E6}
+	EndGlobalSection
+EndGlobal
