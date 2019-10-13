@@ -22,6 +22,8 @@ namespace freetime_simulator
 
             // Starts the test
             StartTest();
+
+            // Add experiment to experimentlog
             AddExperimentToLog(ref listOfExperiments);
         }
 

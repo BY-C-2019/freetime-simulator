@@ -24,11 +24,12 @@ namespace freetime_simulator
             MediaLibrary.Add(new MusicAlbum("Waterloo", "ABBA", 19, 19));
             MediaLibrary.Add(new MusicAlbum("Pet Sounds", "The Beach Boys", 18, 17));
         }
-
+        /// <summary> Checks if the media can be consumed within the time, if yes consume it</summary>
         public virtual bool ConsumeMedia(Person testSubject, ref int timeLeft)
         {
             throw new Exception( this.ToString() + "- ConsumeMedia() inte implementerad");
         }
+        /// <summary> Prints information of the media</summary>
         public virtual void PrintMediaInformation()
         {
             throw new Exception( this.ToString() + "- PrintMediaInformation() inte implementerad");
