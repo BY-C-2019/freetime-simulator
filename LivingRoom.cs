@@ -109,7 +109,7 @@ namespace freetime_simulator
             Console.Clear();
             foreach (Experiment exp in experimentList)
             {
-                System.Console.WriteLine(exp.);
+                // fix this System.Console.WriteLine(exp.);
             }
             Console.ReadKey();
         }
