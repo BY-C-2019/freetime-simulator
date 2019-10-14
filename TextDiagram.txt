@@ -1,0 +1,47 @@
+## Eperiment (Livingroom)
+    int experimentID
+    bool tvAvailable
+    bool dvdPlayerAvailable
+    bool recordPlayerAvailable
+    Person testSubject
+    int experimentTime (from random)
+
+    private void StartTest()
+    private void AddExperimentToLog()
+
+## Person
+    List <Media> mediaBrought
+    string name
+    int ppm (pagesperminiute)
+
+    private void ConsumeMedia()
+
+## Media
+    private virtual bool ConsumeMedia()
+    public virtual void PrintMediaInformation()
+
+## Book : Media
+    string name
+    int nrOfPages
+    string author
+
+    private override void ConsumeMedia()
+    private override void PrintMediaInformation()
+
+## MusicAlbum : Media
+    string name
+    string artist
+    int lengthASide
+    int lengthBSide
+
+    private override void ConsumeMedia()
+    private override void PrintMediaInformation()
+
+## Movie : Media
+    string title
+    string releaseDate
+    int length 
+    
+    private override void ConsumeMedia()
+    private override void PrintMediaInformation()
+
