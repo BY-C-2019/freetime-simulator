@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9EE0F293-7FE5-4B1E-A199-05E7D335D726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fretime-simulator", "src\fretime-simulator\fretime-simulator.csproj", "{2927D530-1A71-43B4-9039-B98845C9030F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "freetime-simulator", "src\freetime-simulator\freetime-simulator.csproj", "{2927D530-1A71-43B4-9039-B98845C9030F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9C241509-8416-4CE2-8DE5-49F906F093E6}"
 EndProject

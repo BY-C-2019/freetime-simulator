@@ -13,7 +13,7 @@ Ett experiment består av att en person ska besöka ett vardagsrum där det kan 
 * En bok har ett namn, ett antal sidor och en författare 
 * Ett album har en artist, namn och total längd på både A- och B- sidorna.
 
-Varje experimentförsök har ett unikt nummer, Forskarna har innan experimentet börjat gjort en mätning på personens läshastighet (antalet sidor/minut) - men  personen får ta med sig olika medier vid varje försök och hur många som helst. När försöket börjar slumpas en tid fram, och personen ska försöka avnjuta så mycket media som möjligt under den givna tiden. Forksarna behöver spara undan en lista över genomförda experiment, deras rumskonfiguration, vem som var försöksperson samt vilka medier som hann avnjutas under den givna tiden.
+Varje experimentförsök har ett unikt nummer, Forskarna har innan experimentet börjat gjort en mätning på personens läshastighet (antalet sidor/minut) - men  personen får ta med sig olika medier vid varje försök och hur många som helst. När försöket börjar slumpas en tid fram, och personen ska försöka avnjuta så mycket media som möjligt under den givna tiden. Forskarna behöver spara undan en lista över genomförda experiment, deras rumskonfiguration, vem som var försöksperson samt vilka medier som hann avnjutas under den givna tiden.
 
 ## Del 2
 

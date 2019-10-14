@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace fretime_simulator
+namespace freetime_simulator
 {
     class Program
     {
