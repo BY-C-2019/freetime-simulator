@@ -109,7 +109,24 @@ namespace freetime_simulator
             Console.Clear();
             foreach (Experiment exp in experimentList)
             {
-                // fix this System.Console.WriteLine(exp.);
+                Console.WriteLine();
+                Console.WriteLine("Test subjects id: {0}", exp.id);
+                Console.WriteLine("Test subjects name: {0}", exp.name);
+                Console.WriteLine("Test subjects consumed {0} medias.", exp.mediaConsumed);
+                Console.Write("It had access to: ");
+                if (exp.movieAccess == true)
+                {
+                    Console.Write("movies");
+                }
+                if (exp.musicAccess == true)
+                {
+                    Console.Write("| music");
+                }
+                if (exp.bookAccess == true)
+                {
+                    Console.Write("| books");
+                }
+                Console.WriteLine();
             }
             Console.ReadKey();
         }
