@@ -25,9 +25,9 @@ namespace freetime_simulator
             return false;
         }
 
-        public override void PrintMediaInformation()
+        public override void PrintMediaInformation(ref string textToPrint)
         {
-            Console.WriteLine("  - {0} - {1}min - Released: {2}", title, length, releaseDate);
+            textToPrint += String.Format("  - {0} - {1}min - Released: {2}\n", title, length, releaseDate);
         }
     }
 }

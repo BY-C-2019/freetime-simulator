@@ -28,9 +28,9 @@ namespace freetime_simulator
             return false;
         }
 
-        public override void PrintMediaInformation()
+        public override void PrintMediaInformation(ref string textToPrint)
         {
-            Console.WriteLine("  - {0} by {1} - Length: A side: {2}min | B side: {3}min ", name, artist, lengthASide, lengthBSide);
+            textToPrint += String.Format("  - {0} by {1} - Length: A side: {2}min | B side: {3}min\n", name, artist, lengthASide, lengthBSide);
         }
     }
 }

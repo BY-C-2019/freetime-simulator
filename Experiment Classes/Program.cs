@@ -16,6 +16,10 @@ namespace freetime_simulator
             // The consumed media
 
 
+            // For debug purpose only
+            FileManager.DeleteFile("backlog.txt");
+
+            // Add media to library
             Media.AddMediaToLibrary();
 
             Random rand = new Random();

@@ -29,38 +29,53 @@ namespace freetime_simulator
 
         private void StartTest()
         {
-            // Print fluff
-            Console.WriteLine("New test initated...");
-            Console.WriteLine("  {0}", testSubject.Name);
-            Console.WriteLine("  {0} ppm", testSubject.PagesPerMinute);
-            Console.WriteLine("  {0} items brought", testSubject.mediaCount);
-            Console.WriteLine("Time: {0}", timeLeft);
-            Console.WriteLine("Room setup: Tv: {0} | DVD player: {1} | Music player: {2}", roomSetup.tv, roomSetup.dvdPlayer, roomSetup.musicPlayer);
-            Console.WriteLine("----------------------------------------------");
-            Console.Write("Test started...");
+            string textToPrint = "";
+            string fileName = "backlog.txt";
+            
+            textToPrint += "New test initated...\n";
+            textToPrint += String.Format("  {0}\n", testSubject.Name);
+            textToPrint += String.Format("  {0} ppm\n", testSubject.PagesPerMinute);
+            textToPrint += String.Format("  {0} items brought\n", testSubject.mediaCount);
+            textToPrint += String.Format("Time: {0}\n", timeLeft);
+            textToPrint += String.Format("Room setup: Tv: {0} | DVD player: {1} | Music player: {2}\n", roomSetup.tv, roomSetup.dvdPlayer, roomSetup.musicPlayer);
+            textToPrint += ("----------------------------------------------\n");
+            textToPrint += "Test started...";
+
+            // Print fluff to console and file
+            Console.Write(textToPrint);
+            FileManager.Write(textToPrint, fileName);
+            
+            // Sleep for powerful effect!!!
             System.Threading.Thread.Sleep(2000);
 
             // Consume until times up or all media is consumed        
-            testSubject.Consume(ref timeLeft, roomSetup, ref consumedMedia);
+            testSubject.Consume(ref timeLeft, roomSetup, ref consumedMedia, ref textToPrint);
 
             // Wait for userinput
-            Console.Write("...Press any key to see list of consumed media...");
+            FileManager.Write(textToPrint, fileName);
+            textToPrint += "Press any key to see list of consumed media...";
+            Console.Write(textToPrint);
             Console.ReadLine();
 
             // Print media that got consumed
-            Console.WriteLine("----------------------------------------------");
-            Console.WriteLine("CONSUMED MEDIA:");
-            PrintMediaList(consumedMedia);
-            Console.WriteLine("----------------------------------------------");
-            Console.WriteLine("Time elapsed: {0} / {1}", (experimentTime - timeLeft), experimentTime);
+            textToPrint = "----------------------------------------------\n";
+            textToPrint += "CONSUMED MEDIA:\n";
+            PrintMediaList(consumedMedia, ref textToPrint);
+            textToPrint += "----------------------------------------------\n";
+            textToPrint += String.Format("Time elapsed: {0} / {1}\n", (experimentTime - timeLeft), experimentTime);
 
             // Wait for userinput to continue
-            Console.Write("\n...Press any key to continue");
+            FileManager.Write(textToPrint, fileName);
+            textToPrint += "\nPress any key to continue\n";
+            Console.Write(textToPrint);
             Console.ReadLine();
+
+            // If no errors were detected during experiment delete backlog.
+            FileManager.DeleteFile(fileName);
         }
 
         /// <summary>  Gather all types of different media and print them together </summary>
-        private void PrintMediaList(List<Media> mediaToPrint)
+        private void PrintMediaList(List<Media> mediaToPrint, ref string textToPrint)
         {
             List<Movie> movies      = new List<Movie>();
             List<Book> books        = new List<Book>();
@@ -82,28 +97,28 @@ namespace freetime_simulator
 
             // Print all movies consumed if list isnt empty
             if (movies.Count != 0) {
-                Console.WriteLine(" Movies");
+                textToPrint += " Movies\n";
                 foreach (Movie movie in movies)
                 {
-                    movie.PrintMediaInformation();
+                    movie.PrintMediaInformation(ref textToPrint);
                 }
             }
 
             // Print all albums consumed if list isnt empty
             if (albums.Count != 0) {
-                Console.WriteLine(" Albums");
+                textToPrint += " Albums\n";
                 foreach (MusicAlbum album in albums)
                 {
-                    album.PrintMediaInformation();
+                    album.PrintMediaInformation(ref textToPrint);
                 }
             }
 
             // Print all books consumed if list isnt empty
             if (books.Count != 0) {
-                Console.WriteLine(" Books");
+                textToPrint += " Books\n";
                 foreach (Book book in books)
                 {
-                    book.PrintMediaInformation();
+                    book.PrintMediaInformation(ref textToPrint);
                 }
             }
         }

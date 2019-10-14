@@ -31,9 +31,9 @@ namespace freetime_simulator
             return nrOfPages / ppm;
         }
         
-        public override void PrintMediaInformation()
+        public override void PrintMediaInformation(ref string textToPrint)
         {
-            Console.WriteLine("  - {0} by {1} - Pages: {2}", name, author, nrOfPages);
+            textToPrint += String.Format("  - {0} by {1} - Pages: {2}\n", name, author, nrOfPages);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace freetime_simulator
             throw new Exception( this.ToString() + "- ConsumeMedia() inte implementerad");
         }
         /// <summary> Prints information of the media</summary>
-        public virtual void PrintMediaInformation()
+        public virtual void PrintMediaInformation(ref string textToPrint)
         {
             throw new Exception( this.ToString() + "- PrintMediaInformation() inte implementerad");
         }

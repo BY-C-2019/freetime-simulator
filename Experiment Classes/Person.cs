@@ -25,7 +25,7 @@ namespace freetime_simulator
             RandomMediaBrought(rand.Next(10,25));
         }
 
-        public void Consume(ref int timeLeft, Livingroom roomSetup, ref List<Media> consumedMedia)
+        public void Consume(ref int timeLeft, Livingroom roomSetup, ref List<Media> consumedMedia, ref string textToPrint)
         {
             for (int i = 0; i < mediaBrought.Count; i++)
             {
@@ -44,7 +44,7 @@ namespace freetime_simulator
 
                 // Consume media if there is enough time, if not end the experiment
                 if (!mediaBrought[i].ConsumeMedia(this, ref timeLeft)){
-                    Console.WriteLine(" time's up!");
+                    textToPrint = "...Time's up!\n";
                     return;    
                 }
 
@@ -52,7 +52,7 @@ namespace freetime_simulator
                 consumedMedia.Add(mediaBrought[i]);
             }
 
-            Console.WriteLine(" everything that could be consumed did!");
+            textToPrint = "...Everything that could be consumed did!\n";
         }
 
         private void RandomMediaBrought(int numberOfMedia) 
