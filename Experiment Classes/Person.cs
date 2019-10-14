@@ -21,7 +21,8 @@ namespace freetime_simulator
             this.pagesPerMinute = pagesPerMinute;
             
             // Random a list of media to bring to the experiment
-            RandomMediaBrought(20);
+            Random rand = new Random();
+            RandomMediaBrought(rand.Next(10,25));
         }
 
         public void Consume(ref int timeLeft, Livingroom roomSetup, ref List<Media> consumedMedia)

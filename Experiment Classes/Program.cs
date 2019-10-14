@@ -41,8 +41,8 @@ namespace freetime_simulator
             // Run the tests
             foreach (Person subject in testSubjects)
             {
-                int         newTime  = rand.Next(200, 401);
-                Livingroom  newRoom  = new Livingroom(rand.Next(0,3), rand.Next(0,3), rand.Next(0,3)); 
+                int         newTime  = rand.Next(240, 421);
+                Livingroom  newRoom  = new Livingroom(rand.Next(0,4), rand.Next(0,4), rand.Next(0,3)); // Increased values for higher chance of having a tv 
 
                 new Experiment(experiments.Count, subject, newRoom, newTime, ref experiments);
                 Console.Clear();
