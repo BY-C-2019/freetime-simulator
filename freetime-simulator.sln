@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fretime-simulator", "src\fr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9C241509-8416-4CE2-8DE5-49F906F093E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "freetome-simulator.Tests", "test\freetome-simulator.Tests\freetome-simulator.Tests.csproj", "{500DAE95-2343-44A8-9CF1-586077912EC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "freetime-simulator.Tests", "test\freetime-simulator.Tests\freetime-simulator.Tests.csproj", "{500DAE95-2343-44A8-9CF1-586077912EC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

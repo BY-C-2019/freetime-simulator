@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <RootNamespace>freetome_simulator.Tests</RootNamespace>
+    <RootNamespace>freetime_simulator.Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>

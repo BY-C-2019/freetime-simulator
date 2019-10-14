@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace freetome_simulator.Tests
+namespace freetime_simulator.Tests
 {
     public class UnitTest1
     {
