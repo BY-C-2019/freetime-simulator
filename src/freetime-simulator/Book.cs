@@ -2,12 +2,10 @@ namespace freetime_simulator
 {
     class Book : Media
     {
-        public string Title { get; }
         public string Author { get; }
         public int Pages { get; }
-        public Book(int length, string title, string author, int pages) : base(length)
+        public Book(int length, string title, string author, int pages) : base(length, title)
         {
-            Title = title;
             Author = author;
             Pages = pages;
         }
