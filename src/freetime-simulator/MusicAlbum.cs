@@ -10,9 +10,8 @@ namespace freetime_simulator
 
         public override bool MediaPlayable(LivingRoom room)
         {
-            return true;
+            return room.HasRecordPlayer();
         }
-        
 
         public override string ToString()
         {

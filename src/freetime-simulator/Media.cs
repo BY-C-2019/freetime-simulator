@@ -13,6 +13,7 @@ namespace freetime_simulator
 
         public virtual bool MediaPlayable(LivingRoom room)
         {
+            
             return true;
         }
     }
