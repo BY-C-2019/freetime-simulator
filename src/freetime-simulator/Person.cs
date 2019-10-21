@@ -6,13 +6,15 @@ namespace freetime_simulator
     {
         public string Name { get; set; }
         public int InteractTimeTotal { get; set; }
+        public decimal ReadSpeed { get; }
 
-        List<Media> inventory;
+        public List<Media> Inventory { get; set; }
 
-        public Person(string name)
+        public Person(string name, decimal readSpeed)
         {
             Name = name;
-            inventory = new List<Media>();
+            ReadSpeed = readSpeed;
+            Inventory = new List<Media>();
         }
 
         public void StartInteracting(string itemDescription)
@@ -28,7 +30,7 @@ namespace freetime_simulator
         private string PrintInventory()
         {
             string items = "";
-            foreach (var item in inventory)
+            foreach (var item in Inventory)
             {
                 string delimeter = "";
                 foreach (char c in item.ToString())

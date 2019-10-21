@@ -6,12 +6,13 @@ namespace freetime_simulator
     class Experiment
     {
         private List<Media> completedActivities;
+        private Random rand = new Random();
 
         public int Duration { get; }
 
-        public Experiment(int duration)
+        public Experiment()
         {
-            Duration = duration;
+            Duration = rand.Next(0, 500);
         }
 
         public void SaveStatistics()
@@ -19,9 +20,10 @@ namespace freetime_simulator
 
         }
 
-        public int CalculatePagesPerMinute()
+        public decimal GetRandomPagesPerMinute()
         {
-            int result = 0;
+            decimal result = Convert.ToDecimal(rand.NextDouble());
+            result += rand.Next(0, 1);
             return result;
         }
         

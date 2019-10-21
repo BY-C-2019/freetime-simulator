@@ -18,5 +18,16 @@ namespace freetime_simulator
             string str = $"Title: {Title} | Artist: {Artist} | Length: {Length}";
             return str;
         }
+
+        
+        public static MusicAlbum StringToAlbum(string[] data)
+        {
+            MusicAlbum album = new MusicAlbum(
+                int.Parse(data[0]),
+                data[1],
+                data[2]
+            );
+            return album;
+        }
     }
 }

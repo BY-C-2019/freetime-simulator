@@ -1,6 +1,6 @@
 namespace freetime_simulator
 {
-    class Media
+    abstract class Media
     {
         public int Length { get; }
         public string Title { get; }
@@ -13,7 +13,6 @@ namespace freetime_simulator
 
         public virtual bool MediaPlayable(LivingRoom room)
         {
-            
             return true;
         }
     }

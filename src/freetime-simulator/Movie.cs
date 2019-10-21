@@ -4,10 +4,12 @@ namespace freetime_simulator
 {
     class Movie : Media
     {   
-        public DateTime ReleaseDate { get; }     
-        public Movie(int length, string title, DateTime releaseDate) : base(length, title)
+        public string Director { get; }
+        public int ReleaseYear { get; }     
+        public Movie(int length, string title, string director, int releaseYear) : base(length, title)
         {
-            ReleaseDate = releaseDate;
+            Director = director;
+            ReleaseYear = releaseYear;
         }
 
         public override bool MediaPlayable(LivingRoom room)
@@ -18,8 +20,20 @@ namespace freetime_simulator
 
         public override string ToString()
         {
-            string str = $"Title: {Title} | Author: {ReleaseDate} | Length: {Length}";
+            string str = $"Title: {Title} | Director: {Director} | ReleaseYear: {ReleaseYear} | Length: {Length}";
             return str;
+        }
+
+        
+        public static Movie StringToMovie(string[] data)
+        {
+            Movie movie = new Movie(
+                int.Parse(data[0]),
+                data[1],
+                data[2],
+                int.Parse(data[3])
+            );
+            return movie;
         }
     }
 }
