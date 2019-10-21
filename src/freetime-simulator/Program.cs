@@ -19,8 +19,7 @@ namespace freetime_simulator
             string[] albumData;
 
             Experiment experiment;
-            Person person;
-            
+            Person person;   
 
             Console.WriteLine("===== FreeTime Simulator =====");
             
@@ -34,10 +33,10 @@ namespace freetime_simulator
             // Initiering.
             do
             {
-                Console.WriteLine("Wem utsätts för experimentet?");
+                Console.WriteLine("Vem utsätts för experimentet?");
                 Console.Write("Namn >>");
                 input = Console.ReadLine();
-                Console.Write("Stämmer detta att namnet på försökspersonen är " + input);
+                Console.WriteLine("Stämmer detta att namnet på försökspersonen är " + input);
                 Console.Write("ja/nej >>");
                 if (Console.ReadLine().ToLower()[0] == 'j') { break; }
             }while(true);
@@ -45,7 +44,6 @@ namespace freetime_simulator
             experiment = new Experiment();
             decimal readSpeed = experiment.GetRandomPagesPerMinute();
             person = new Person(input, readSpeed);
-            
 
             // Be användaren om en lista med object.
             do{
@@ -70,21 +68,19 @@ namespace freetime_simulator
                 { 
                     Console.WriteLine("Nu vart det lite fel på den boken."); 
                 }
-                
-
             }while(bookInput);
 
             do
             {
                 Console.Clear();
                 Console.WriteLine("\nVilka filmer har du med dig?");
-                Console.WriteLine("Skriv in Titel, Regisör och Längd i minuter. Separerat av kommatecken.");
-                Console.WriteLine("Exempel [Tillbaka Till Framtiden,Robert Zemeckis,117]");
+                Console.WriteLine("Skriv in Titel, Regisör, utgivningsår och Längd i minuter. Separerat av kommatecken.");
+                Console.WriteLine("Exempel [Tillbaka Till Framtiden,Robert Zemeckis,1985,117]");
                 Console.Write(">>");
 
                 // Inmatning
                 input = Console.ReadLine();
-                validInput = ValidCommaSeperated(2, input);
+                validInput = ValidCommaSeperated(3, input);
                 if (validInput)
                 {
                     movieData = SplitUpString(input);
@@ -121,43 +117,64 @@ namespace freetime_simulator
                 { 
                     Console.WriteLine("Nu vart det lite fel på den filmen."); 
                 }
-                
-
             }while(vinylInput);
 
-            Console.WriteLine(person);
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("ToString utan override av klassen Book");
-            Console.WriteLine();
-            Console.WriteLine(person.Inventory[0]);
-
+            Console.WriteLine("Experimentet kommer nu startas.");
+            Console.WriteLine("Tryck valfri tangent för att fortsätta.");
             Console.ReadKey();
 
             // Starta experimentet.
-            foreach(var media in person.Inventory)
+            do
             {
-                if (media.Length <= experiment.TimeLeft())
+                // Utför aktivitet.
+                foreach(var media in person.Inventory)
                 {
-                    experiment.UseMedia(media);
+                    if (media.Length <= experiment.TimeCounter)
+                    {
+                        // Is there time left media is used.
+                        var value = media.GetType();
+                
+                        Console.WriteLine($"Using {value.Name}");
+                        if(!experiment.UseMedia(media))
+                        {
+                            Console.WriteLine("Kunde inte använda:");
+                            Console.WriteLine(media);
+                            Console.WriteLine("Utrustning saknas!");
+                            Console.ReadKey();
+                        }
+                    }
+                    else 
+                    {
+                        experiment.TimeCounter = 0;
+                        break; 
+                    }
                 }
-            }
-
+                // Runs the list over and over until experiment ends.
+                // Är experimentet slut?
+                if (experiment.TimeCounter <= 0)
+                {
+                    break;
+                }
+            }while(true);
 
 
             // Be användaren att använde en pryl.
 
-            // Utför aktivitet.
 
-            // Är experimentet slut?
 
             // Är experimentet slut så sammanfatta statistik.
 
+            Console.WriteLine(person);
             Console.WriteLine(experiment);
+            // TODO Snygga tilll utskriften av statistik.
+            // Även rummet ska vara med här.
 
             // Alternativt spara data i textfil.
             
             // Avsluta.
+            Console.WriteLine("Experimentet är över.");
+            Console.WriteLine("Tryck valfri tangent för att avsluta...");
+            Console.ReadKey();
         }
 
         private static bool ValidCommaSeperated(int commas, string input)

@@ -21,6 +21,7 @@ namespace freetime_simulator
         public override string ToString()
         {
             string str = $"Title: {Title} | Director: {Director} | ReleaseYear: {ReleaseYear} | Length: {Length}";
+            str += "\n";
             return str;
         }
 
@@ -28,10 +29,10 @@ namespace freetime_simulator
         public static Movie StringToMovie(string[] data)
         {
             Movie movie = new Movie(
-                int.Parse(data[0]),
+                int.Parse(data[3]),
+                data[0],
                 data[1],
-                data[2],
-                int.Parse(data[3])
+                int.Parse(data[2])
             );
             return movie;
         }

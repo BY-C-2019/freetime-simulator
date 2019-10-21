@@ -11,9 +11,9 @@ namespace freetime_simulator
 
         public LivingRoom()
         {
-            if (rand.Next(0,2) == 2) { Television = new TV(); }
-            if (rand.Next(0,2) == 2) { DvdPlayer = new DVDPlayer(); }
-            if (rand.Next(0,2) == 2) { RecordPlayer = new RecordPlayer(); }
+            if (rand.Next(0, 2) == 1) { Television = new TV(); }
+            if (rand.Next(0,2) == 1) { DvdPlayer = new DVDPlayer(); }
+            if (rand.Next(0,2) == 1) { RecordPlayer = new RecordPlayer(); }
         }
 
         public bool HasRecordPlayer()

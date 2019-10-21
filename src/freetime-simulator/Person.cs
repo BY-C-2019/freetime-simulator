@@ -17,22 +17,12 @@ namespace freetime_simulator
             Inventory = new List<Media>();
         }
 
-        public void StartInteracting(string itemDescription)
-        {
-
-        }
-
-        public void UpdateInteractTime(int time)
-        {
-
-        }
-
-        private string PrintInventory()
+        private string ReturnInventory()
         {
             string items = "";
             foreach (var item in Inventory)
             {
-                string delimeter = "";
+                string delimeter = ""; 
                 foreach (char c in item.ToString())
                     delimeter += "-";
                 items += delimeter + "\n\r" + item;
@@ -43,8 +33,7 @@ namespace freetime_simulator
         public override string ToString()
         {
             string str = $"{Name}:\n\r";
-            str += "\n\r";
-            str += PrintInventory();
+            str += ReturnInventory();
             return str;
         }
     }

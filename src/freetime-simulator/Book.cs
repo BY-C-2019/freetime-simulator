@@ -4,7 +4,6 @@ namespace freetime_simulator
 {
     class Book : Media
     {
-        public object obj;
         public string Author { get; }
         public int Pages { get; }
         public Book(int length, string title, string author, int pages) : base(length, title)
@@ -13,11 +12,12 @@ namespace freetime_simulator
             Pages = pages;
         }
 
-        // public override string ToString()
-        // {
-        //     string str = $"Title: {Title} | Author: {Author} | Number Of Pages: {Pages}";
-        //     return str;
-        // }
+        public override string ToString()
+        {
+            string str = $"Title: {Title} | Author: {Author} | Number Of Pages: {Pages}";
+            str += "\n";
+            return str;
+        }
 
         public static Book StringToBook(string[] data, decimal readSpeed)
         {

@@ -16,6 +16,7 @@ namespace freetime_simulator
         public override string ToString()
         {
             string str = $"Title: {Title} | Artist: {Artist} | Length: {Length}";
+            str += "\n";
             return str;
         }
 
@@ -23,9 +24,9 @@ namespace freetime_simulator
         public static MusicAlbum StringToAlbum(string[] data)
         {
             MusicAlbum album = new MusicAlbum(
-                int.Parse(data[0]),
-                data[1],
-                data[2]
+                int.Parse(data[2]),
+                data[0],
+                data[1]
             );
             return album;
         }
