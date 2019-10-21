@@ -126,10 +126,24 @@ namespace freetime_simulator
             }while(vinylInput);
 
             Console.WriteLine(person);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("ToString utan override av klassen Book");
+            Console.WriteLine();
+            Console.WriteLine(person.Inventory[0]);
 
             Console.ReadKey();
 
             // Starta experimentet.
+            foreach(var media in person.Inventory)
+            {
+                if (media.Length <= experiment.TimeLeft())
+                {
+                    experiment.UseMedia(media);
+                }
+            }
+
+
 
             // Be användaren att använde en pryl.
 
@@ -138,6 +152,8 @@ namespace freetime_simulator
             // Är experimentet slut?
 
             // Är experimentet slut så sammanfatta statistik.
+
+            Console.WriteLine(experiment);
 
             // Alternativt spara data i textfil.
             
