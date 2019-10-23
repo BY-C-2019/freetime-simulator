@@ -43,7 +43,10 @@ namespace freetime_simulator
 
             experiment = new Experiment();
             decimal readSpeed = experiment.GetRandomPagesPerMinute();
-            person = new Person(input, readSpeed);
+            
+            // Calling constructor for debugging and development.
+            // TODO Change before deployment!
+            person = new Person(input, readSpeed, true);
 
             // Be användaren om en lista med object.
             do{
@@ -163,7 +166,7 @@ namespace freetime_simulator
 
 
             // Är experimentet slut så sammanfatta statistik.
-
+            Console.Clear();
             Console.WriteLine(person);
             Console.WriteLine(experiment);
             // TODO Snygga tilll utskriften av statistik.
