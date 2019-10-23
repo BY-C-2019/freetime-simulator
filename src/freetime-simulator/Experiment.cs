@@ -13,6 +13,7 @@ namespace freetime_simulator
             Id = rand.Next(1, 10000000);
             room = new LivingRoom();
         }
+
         private List<Media> completedActivities;
         private Random rand = new Random();
         public int Duration { get; }

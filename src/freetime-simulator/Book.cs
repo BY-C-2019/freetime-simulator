@@ -6,7 +6,8 @@ namespace freetime_simulator
     {
         public string Author { get; }
         public int Pages { get; }
-        public Book(int length, string title, string author, int pages) : base(length, title)
+        public Book(
+            int length, string title, string author, int pages) : base(length, title)
         {
             Author = author;
             Pages = pages;
@@ -14,8 +15,8 @@ namespace freetime_simulator
 
         public override string ToString()
         {
-            string str = $"Title: {Title} | Author: {Author} | Number Of Pages: {Pages}";
-            str += "\n";
+            string str = GetMediaType() + ":\n";
+            str += $"Title: {Title} | Author: {Author} | Number Of Pages: {Pages}";
             return str;
         }
 

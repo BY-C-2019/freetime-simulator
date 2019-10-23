@@ -15,11 +15,10 @@ namespace freetime_simulator
 
         public override string ToString()
         {
-            string str = $"Title: {Title} | Artist: {Artist} | Length: {Length}";
-            str += "\n";
+            string str = GetMediaType() + ":\n";
+            str += $"Title: {Title} | Artist: {Artist} | Length: {Length}";
             return str;
         }
-
         
         public static MusicAlbum StringToAlbum(string[] data)
         {

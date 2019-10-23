@@ -3,9 +3,9 @@ using System;
 namespace freetime_simulator
 {
     class Movie : Media
-    {   
+    {
         public string Director { get; }
-        public int ReleaseYear { get; }     
+        public int ReleaseYear { get; }
         public Movie(int length, string title, string director, int releaseYear) : base(length, title)
         {
             Director = director;
@@ -20,12 +20,11 @@ namespace freetime_simulator
 
         public override string ToString()
         {
-            string str = $"Title: {Title} | Director: {Director} | ReleaseYear: {ReleaseYear} | Length: {Length}";
-            str += "\n";
+            string str = GetMediaType() + ":\n";
+            str += $"Title: {Title} | Director: {Director} | ReleaseYear: {ReleaseYear} | Length: {Length}";
             return str;
         }
 
-        
         public static Movie StringToMovie(string[] data)
         {
             Movie movie = new Movie(

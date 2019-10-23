@@ -1,3 +1,5 @@
+using System;
+
 namespace freetime_simulator
 {
     abstract class Media
@@ -14,6 +16,13 @@ namespace freetime_simulator
         public virtual bool MediaPlayable(LivingRoom room)
         {
             return true;
+        }
+
+        protected virtual string GetMediaType()
+        {
+            Type type = this.GetType();
+            string name = type.Name;
+            return name;
         }
     }
 }
