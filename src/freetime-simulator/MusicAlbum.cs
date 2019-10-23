@@ -8,15 +8,13 @@ namespace freetime_simulator
                Artist = artist;
         }
 
-        public override bool MediaPlayable(LivingRoom room)
-        {
-            return room.HasRecordPlayer();
-        }
-
         public override string ToString()
         {
-            string str = GetMediaType() + ":\n";
-            str += $"Title: {Title} | Artist: {Artist} | Length: {Length}";
+            string str = "";
+            str += $"Type: {GetMediaType()} | ";
+            str += $"Title: {Title} | ";
+            str += $"Artist: {Artist} | ";
+            str += $"Length: {Length}";
             return str;
         }
         

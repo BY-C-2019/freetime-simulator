@@ -12,16 +12,14 @@ namespace freetime_simulator
             ReleaseYear = releaseYear;
         }
 
-        public override bool MediaPlayable(LivingRoom room)
-        {
-            // TODO if a DVD and TV exists in the LivingRoom
-            return true;
-        }
-
         public override string ToString()
         {
-            string str = GetMediaType() + ":\n";
-            str += $"Title: {Title} | Director: {Director} | ReleaseYear: {ReleaseYear} | Length: {Length}";
+            string str = "";
+            str += $"Type: {GetMediaType()} | ";
+            str += $"Title: {Title} | ";
+            str += "Director: {Director} | ";
+            str += "ReleaseYear: {ReleaseYear} | ";
+            str += "Length: {Length}";
             return str;
         }
 

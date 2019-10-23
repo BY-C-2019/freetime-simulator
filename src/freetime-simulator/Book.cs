@@ -15,8 +15,11 @@ namespace freetime_simulator
 
         public override string ToString()
         {
-            string str = GetMediaType() + ":\n";
-            str += $"Title: {Title} | Author: {Author} | Number Of Pages: {Pages}";
+            string str = "";
+            str += $"Type: {GetMediaType()} | ";
+            str += $"Title: {Title} | ";
+            str += $"Author: {Author} | ";
+            str += $"Number Of Pages: {Pages}";
             return str;
         }
 

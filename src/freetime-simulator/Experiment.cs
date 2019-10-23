@@ -70,13 +70,17 @@ namespace freetime_simulator
 
         private string ReturnCompletedActivities()
         {
-            string str = "";
-            foreach (var media in completedActivities)
+            if (completedActivities.Count != 0)
             {
-                str += media + "\n";
-                str += "---------------------------\n";
+                string str = "\n";
+                foreach (var media in completedActivities)
+                {
+                    str += media + "\n";
+                    str += "---------------------------\n";
+                }
+                return str;
             }
-            return str;
+            else return "Inga aktiviteter han genomföras fullständigt!\n";
         }
 
         public void SaveStatistics()
@@ -93,10 +97,14 @@ namespace freetime_simulator
 
         public override String ToString()
         {
-            string str = $"Experiment nr: {Id} | Length: {Duration}\n";
+            string str = "";
+            str += $"Experiment nr: {Id} | ";
+            str += $"Length: {Duration}\n";
             str += "======================\n";
             str += "Completed Activities:\n";
+            str += "----------------------";
             str += ReturnCompletedActivities();
+            str += room;
             return str;
         }
     }

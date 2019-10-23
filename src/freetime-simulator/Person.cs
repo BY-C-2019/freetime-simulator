@@ -24,6 +24,7 @@ namespace freetime_simulator
             this.CreateDefaultMedia();
         }
 
+        // ctor for development with example media.
         private void CreateDefaultMedia()
         {
             MusicAlbum album = new MusicAlbum(73, "Octavarium", "Dream Theater");
@@ -35,7 +36,9 @@ namespace freetime_simulator
             Inventory.Add(book);
         }
 
-        private string ReturnInventory()
+        // This function adds all item seperated by a line 
+        // that´s equals the length of the item string.
+        private string ReturnInventoryAsString()
         {
             string items = "";
             foreach (var item in Inventory)
@@ -43,15 +46,15 @@ namespace freetime_simulator
                 string delimeter = ""; 
                 foreach (char c in item.ToString())
                     delimeter += "-";
-                items += delimeter + "\n\r" + item;
+                items += "\n" + delimeter + "\n\r" + item;
             }
             return items;
         }
 
         public override string ToString()
         {
-            string str = $"{Name}:\n\r";
-            str += ReturnInventory();
+            string str = $"{Name} | Pages/min: {ReadSpeed:N2}";
+            str += ReturnInventoryAsString();
             return str;
         }
     }

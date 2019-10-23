@@ -45,7 +45,8 @@ namespace freetime_simulator
 
         public override String ToString()
         {
-            string str = $"Livingroom setup | TV: {HasTelevision()} | DvdPlayer: {HasDvdPlayer()} | RecordPlayer: {HasRecordPlayer()}";
+            string str = "=============================================\n";
+            str += $"Livingroom setup | TV: {HasTelevision()} | DvdPlayer: {HasDvdPlayer()} | RecordPlayer: {HasRecordPlayer()}";
             return str;
         }
     }

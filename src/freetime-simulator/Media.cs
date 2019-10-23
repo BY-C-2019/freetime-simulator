@@ -13,11 +13,6 @@ namespace freetime_simulator
             Title = title;
         }
 
-        public virtual bool MediaPlayable(LivingRoom room)
-        {
-            return true;
-        }
-
         protected virtual string GetMediaType()
         {
             Type type = this.GetType();

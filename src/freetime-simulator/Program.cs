@@ -48,11 +48,12 @@ namespace freetime_simulator
             // TODO Change before deployment!
             person = new Person(input, readSpeed, true);
 
-            // Be användaren om en lista med object.
+            // Ask user for a list of objects.
             do{
                 Console.Clear();
                 Console.WriteLine("\nVilka böcker har du med dig?");
                 Console.WriteLine("Skriv in Titel, Författare och antal sidor. Separerat av kommatecken.");
+                Console.WriteLine("Lämna fältet tomt om du vill gå vidare.");
                 Console.WriteLine("Exempel [Kapten Kalsong,Dav Pilkey,87]");
                 Console.Write(">>");
                 // Inmatning
@@ -78,10 +79,11 @@ namespace freetime_simulator
                 Console.Clear();
                 Console.WriteLine("\nVilka filmer har du med dig?");
                 Console.WriteLine("Skriv in Titel, Regisör, utgivningsår och Längd i minuter. Separerat av kommatecken.");
+                Console.WriteLine("Lämna fältet tomt om du vill gå vidare.");
                 Console.WriteLine("Exempel [Tillbaka Till Framtiden,Robert Zemeckis,1985,117]");
                 Console.Write(">>");
 
-                // Inmatning
+                // Input
                 input = Console.ReadLine();
                 validInput = ValidCommaSeperated(3, input);
                 if (validInput)
@@ -104,10 +106,11 @@ namespace freetime_simulator
                 Console.Clear();
                 Console.WriteLine("\nVilka vinyler har du med dig?");
                 Console.WriteLine("Skriv in Titel, Artist och Längd i minuter. Separerat av kommatecken.");
+                Console.WriteLine("Lämna fältet tomt om du vill gå vidare.");
                 Console.WriteLine("Exempel [Powerslave,Iron Maiden,50]");
                 Console.Write(">>");
 
-                // Inmatning
+                // Input
                 input = Console.ReadLine();
                 validInput = ValidCommaSeperated(2, input);
                 if (validInput)
@@ -126,18 +129,18 @@ namespace freetime_simulator
             Console.WriteLine("Tryck valfri tangent för att fortsätta.");
             Console.ReadKey();
 
-            // Starta experimentet.
+            // Start experiment.
             do
             {
-                // Utför aktivitet.
+                // Execute activity.
                 foreach(var media in person.Inventory)
                 {
                     if (media.Length <= experiment.TimeCounter)
                     {
-                        // Is there time left media is used.
+                        // Is there time left, media is used.
                         var value = media.GetType();
                 
-                        Console.WriteLine($"Using {value.Name}");
+                        Console.WriteLine($"Använder {value.Name}");
                         if(!experiment.UseMedia(media))
                         {
                             Console.WriteLine("Kunde inte använda:");
@@ -153,7 +156,7 @@ namespace freetime_simulator
                     }
                 }
                 // Runs the list over and over until experiment ends.
-                // Är experimentet slut?
+                // Is experiment over?
                 if (experiment.TimeCounter <= 0)
                 {
                     break;
@@ -161,25 +164,26 @@ namespace freetime_simulator
             }while(true);
 
 
-            // Be användaren att använde en pryl.
+            // Ask user what item to use.
+            // TODO User can choose media. Extra function.
 
 
-
-            // Är experimentet slut så sammanfatta statistik.
+            // If experiment is over, write out the statistics.
             Console.Clear();
-            Console.WriteLine(person);
             Console.WriteLine(experiment);
-            // TODO Snygga tilll utskriften av statistik.
-            // Även rummet ska vara med här.
+            Console.WriteLine("---------------------------------\n");
+            Console.WriteLine("Subject: " + person);
 
-            // Alternativt spara data i textfil.
+            // TODO Extra featude save stat to file.
             
-            // Avsluta.
+            // Exit program.
+            Console.WriteLine();
             Console.WriteLine("Experimentet är över.");
             Console.WriteLine("Tryck valfri tangent för att avsluta...");
             Console.ReadKey();
         }
 
+        // Checks the string for the right amount of comma seperated values.
         private static bool ValidCommaSeperated(int commas, string input)
         {
             int numberOfCommas = 0;
