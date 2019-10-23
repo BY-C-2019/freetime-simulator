@@ -135,6 +135,7 @@ namespace freetime_simulator
                 // Execute activity.
                 foreach(var media in person.Inventory)
                 {
+                    Console.Clear();
                     if (media.Length <= experiment.TimeCounter)
                     {
                         // Is there time left, media is used.
